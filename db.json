@@ -1,0 +1,77 @@
+{
+    "brands": [
+        {"name": "audi"}, 
+        {"name": "bmw"}, 
+        {"name": "cadillac"}, 
+        {"name": "dodge"}, 
+        {"name": "ford"}, 
+        {"name": "gmc"}
+    ],
+    
+    "dealers": [
+        {
+            "dealer_name": "Josh's AutoWorld",
+            "code": "josh",
+            "dealer_id": "multi_brand_dealer_001",
+            "email": "thejscott5@gmail.com",
+            "brands": ["bmw", "mercedes"]
+          },
+          {
+            "dealer_name": "Montana Cadillac",
+            "code": "monty",
+            "dealer_id": "cadillac_dealer_001",
+            "email": "montanaloran@gmail.com",
+            "brands": ["cadillac"]
+          },
+          {
+            "dealer_name": "Scott Truck Depot",
+            "code": "scott",
+            "dealer_id": "multi_brand_dealer_002",
+            "email": "joshuadicker@gmail.com",
+            "brands": ["dodge", "ford", "gmc"]
+          },
+          {
+            "dealer_name": "Audi of Dorrance",
+            "code": "dorrie",
+            "dealer_id": "audi_dealer_001",
+            "email": "dorriegoodman@gmail.com",
+            "brands": ["audi"]
+          }
+    ],
+    
+        "variables": [
+          { "key": "YEAR", "label": "Model Year", "type": "text", "required": true, "category": "vehicle" },
+          { "key": "MODEL", "label": "Model Name", "type": "text", "required": true, "category": "vehicle" },
+          { "key": "MSRP", "label": "MSRP", "type": "currency", "required": true, "category": "pricing" },
+          { "key": "APR_RATE", "label": "APR Rate", "type": "percentage", "required": false, "category": "finance" },
+          { "key": "APR_TERM", "label": "APR Term (months)", "type": "number", "required": false, "category": "finance" },
+          { "key": "MONTHLY_PAYMENT", "label": "Monthly Payment", "type": "currency", "required": true, "category": "pricing" },
+          { "key": "MONTHLY_COST_PER_1000_FINANCED", "label": "Monthly Cost per $1000 Financed", "type": "currency", "required": false, "category": "finance" },
+          { "key": "LEASE_TERM", "label": "Lease Term (months)", "type": "number", "required": false, "category": "finance" },
+          { "key": "CASH_DUE_AT_SIGNING", "label": "Cash Due at Signing", "type": "currency", "required": false, "category": "pricing" },
+          { "key": "DOWN_PAYMENT", "label": "Down Payment", "type": "currency", "required": false, "category": "pricing" },
+          { "key": "GROSS_CAP_COST", "label": "Gross Capitalized Cost", "type": "currency", "required": false, "category": "pricing" },
+          { "key": "OPTIONAL_PACKAGE", "label": "Optional Package", "type": "text", "required": false, "category": "vehicle" },
+          { "key": "TOTAL_MONTHLY_PAYMENTS", "label": "Total Monthly Payments", "type": "currency", "required": false, "category": "pricing" },
+          { "key": "ACQUISITION_FEE", "label": "Acquisition Fee", "type": "currency", "required": false, "category": "fees" },
+          { "key": "FIRST_MONTH_PAYMENT", "label": "First Month Payment", "type": "currency", "required": false, "category": "pricing" },
+          { "key": "TOTAL_PAYMENTS", "label": "Total Payments", "type": "currency", "required": false, "category": "pricing" },
+          { "key": "OVERAGE_COST_PER_MILE", "label": "Overage Cost per Mile", "type": "currency", "required": false, "category": "fees" },
+          { "key": "MILEAGE_ALLOWANCE", "label": "Mileage Allowance", "type": "number", "required": false, "category": "terms" },
+          { "key": "TURN_IN_FEE", "label": "Vehicle Turn-In Fee", "type": "currency", "required": false, "category": "fees" },
+          { "key": "PURCHASE_OPTION", "label": "Purchase Option at End", "type": "currency", "required": false, "category": "terms" },
+          { "key": "LEASE_CASH", "label": "Lease Cash Incentive", "type": "currency", "required": false, "category": "incentives" },
+          { "key": "MILITARY_INCENTIVE", "label": "Military Incentive", "type": "percentage", "required": false, "category": "incentives" },
+          { "key": "LOYALTY_INCENTIVE", "label": "Loyalty Incentive", "type": "percentage", "required": false, "category": "incentives" },
+          { "key": "RESIDUAL_VALUE", "label": "Residual Value", "type": "currency", "required": false, "category": "finance" },
+          { "key": "VIN", "label": "VIN", "type": "text", "required": false, "category": "vehicle" },
+          { "key": "STOCK_NUMBER", "label": "Stock Number", "type": "text", "required": false, "category": "vehicle" },
+          { "key": "TECH_PACKAGE", "label": "Tech Package", "type": "text", "required": false, "category": "vehicle" },
+          { "key": "WARRANTY_YEARS", "label": "Warranty (Years)", "type": "number", "required": false, "category": "terms" },
+          { "key": "LUXURY_PACKAGE", "label": "Luxury Package", "type": "text", "required": false, "category": "vehicle" },
+          { "key": "FUEL_TYPE", "label": "Fuel Type", "type": "text", "required": false, "category": "vehicle" },
+          { "key": "BATTERY_RANGE", "label": "Battery Range (miles)", "type": "number", "required": false, "category": "vehicle" },
+          { "key": "EXPIRATION_DATE", "label": "Offer Expiration Date", "type": "date", "required": true, "category": "meta" }
+        ]
+      
+}
