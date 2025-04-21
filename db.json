@@ -72,6 +72,50 @@
           { "key": "FUEL_TYPE", "label": "Fuel Type", "type": "text", "required": false, "category": "vehicle" },
           { "key": "BATTERY_RANGE", "label": "Battery Range (miles)", "type": "number", "required": false, "category": "vehicle" },
           { "key": "EXPIRATION_DATE", "label": "Offer Expiration Date", "type": "date", "required": true, "category": "meta" }
-        ]
+        ],
+        "templates": [
+    {
+      "brand": "audi",
+      "buy": "Buy the {YEAR} Audi {MODEL} with {APR_RATE}% APR for {APR_TERM} months. MSRP: {MSRP}. Expires {EXPIRATION_DATE}.",
+      "lease": "Lease the {YEAR} Audi {MODEL} for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "MSRP", "EXPIRATION_DATE", "MONTHLY_PAYMENT", "LEASE_TERM"]
+    },
+    {
+      "brand": "bmw",
+      "buy": "{YEAR} BMW {MODEL} — {APR_RATE}% APR for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
+      "lease": "{YEAR} BMW {MODEL}, lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {LUXURY_PACKAGE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "EXPIRATION_DATE", "MONTHLY_PAYMENT", "LEASE_TERM", "LUXURY_PACKAGE"]
+    },
+    {
+      "brand": "cadillac",
+      "buy": "Finance the {YEAR} Cadillac {MODEL} at {APR_RATE}% for {APR_TERM} months. MSRP: {MSRP}.",
+      "lease": "{YEAR} Cadillac {MODEL} lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "MSRP", "MONTHLY_PAYMENT", "LEASE_TERM", "EXPIRATION_DATE"]
+    },
+    {
+      "brand": "dodge",
+      "buy": "{YEAR} Dodge {MODEL}. Finance at {APR_RATE}% APR for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
+      "lease": "Lease the {YEAR} Dodge {MODEL} for {MONTHLY_PAYMENT}/mo. Term: {LEASE_TERM} months.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "EXPIRATION_DATE", "MONTHLY_PAYMENT", "LEASE_TERM"]
+    },
+    {
+      "brand": "ford",
+      "buy": "{YEAR} Ford {MODEL}. Get {APR_RATE}% financing for {APR_TERM} months. Fuel type: {FUEL_TYPE}.",
+      "lease": "Lease {YEAR} Ford {MODEL} for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "FUEL_TYPE", "MONTHLY_PAYMENT", "LEASE_TERM", "EXPIRATION_DATE"]
+    },
+    {
+      "brand": "gmc",
+      "buy": "Finance your {YEAR} GMC {MODEL} at {APR_RATE}% for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
+      "lease": "{YEAR} GMC {MODEL} lease — {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {TECH_PACKAGE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "EXPIRATION_DATE", "MONTHLY_PAYMENT", "LEASE_TERM", "TECH_PACKAGE"]
+    }
+  ]
       
 }
