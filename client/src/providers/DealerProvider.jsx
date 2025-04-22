@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import DealerContext from "../contexts/DealerContext"
 
+
 function DealerProvider({children}) {
+
+    const  [isLoggedIn, setisLoggedIn] = useState(false)
     const [ dealers, setDealers ] = useState([])
     const [ loginInfo, setLoginInfo ] = useState({
         username: '',
         password: ''
     })
-    const [currentUser, setCurrentUser] = useState({
-       current_username: '',
-       current_password: ''
-    })
+    const [currentUser, setCurrentUser] = useState(null)
 
     const navigate = useNavigate()
 
@@ -29,13 +29,18 @@ function DealerProvider({children}) {
     }
 
     const onLoginClick = () => {
-        const matchIndex = dealers.findIndex(
-            d => d.usercode === loginInfo.username && d.passcode === loginInfo.password
-          )
-          setCurrentUser(dealers[matchIndex])
-          navigate('/home')
-    }
-
+        const match = dealers.find(
+          d => d.usercode === loginInfo.username && d.passcode === loginInfo.password
+        )
+      
+        if (!match) {
+          alert("Invalid login ❌")
+          return
+        }
+      
+        setCurrentUser(match)
+        navigate('/home')
+      }
 
     const onClearClick = () => {
         setLoginInfo({
@@ -57,14 +62,10 @@ function DealerProvider({children}) {
 
 
 
-   
-
-
-
     return (
     <>
     <DealerContext.Provider
-    value={{ currentUser, dealers, loginInfo, onLoginInput, onLoginClick, onClearClick }}
+    value={{ currentUser, dealers, loginInfo, isLoggedIn, onLoginInput, onLoginClick, onClearClick }}
     >
         {children}
     </DealerContext.Provider>
