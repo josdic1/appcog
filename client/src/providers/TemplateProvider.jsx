@@ -6,7 +6,7 @@ function TemplateProvider({children}) {
     const { selectedBrand } = useContext(BrandContext)
 
     const [selectedTemplate, setSelectedTemplate] = useState("")
-
+    const [variableList, setVariableList] = useState([])
     useEffect(() => {
         if(selectedBrand) {
             fetchBrandTemplate()
@@ -24,13 +24,25 @@ function TemplateProvider({children}) {
             const data = await r.json()
             const filtered = data.find(t => t.brand === selectedBrand)
             setSelectedTemplate(filtered)
+            fetchTemplateVariables()
         }catch (error) {console.error("❌ Caught error:", error);}
+    }
+
+    async function fetchTemplateVariables() {
+        try{
+            const r = await fetch(`http://localhost:3000/variables`)
+            if(!r.ok){
+                throw new Error("💥 Error");
+            }
+            const data = await r.json()
+            setVariableList(data)
+        }catch (error) {console.error("❌ Caught error:", error);}  
     }
 
 return (
 <>
 <TemplateContext.Provider
-value={{ selectedTemplate }}
+value={{ selectedTemplate, variableList }}
 >
     {children}
 </TemplateContext.Provider>
