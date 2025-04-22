@@ -12,17 +12,20 @@ function DealerProvider({children}) {
         password: ''
     })
     const [currentUser, setCurrentUser] = useState(null)
+    const [isHydrated, setIsHydrated] = useState(false)
 
     const navigate = useNavigate()
 
     useEffect(() => {
-        const stored = localStorage.getItem("user")
-        if (stored) {
-          setCurrentUser(JSON.parse(stored))
-        }
-      }, [])
-      
+      const stored = localStorage.getItem("user")
+      if (stored) {
+        setCurrentUser(JSON.parse(stored))
+      }
+      setIsHydrated(true)
+    }, [])
 
+ 
+    
     useEffect(() => {
         fetchDealers()
     },[])
@@ -77,7 +80,7 @@ function DealerProvider({children}) {
     return (
     <>
     <DealerContext.Provider
-    value={{ currentUser, dealers, loginInfo, onLoginInput, onLoginClick, onClearClick, onLogout }}
+    value={{ currentUser, dealers, loginInfo, isHydrated, onLoginInput, onLoginClick, onClearClick, onLogout }}
     >
         {children}
     </DealerContext.Provider>

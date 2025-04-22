@@ -4,7 +4,7 @@ import DealerContext from "../contexts/DealerContext"
 
 
 
-function LogButton() {
+function DealerLogButton() {
     
     const  { currentUser, onLogout } = useContext(DealerContext)
 
@@ -22,4 +22,4 @@ function LogButton() {
 </>
 )}
 
-export default LogButton
+export default DealerLogButton

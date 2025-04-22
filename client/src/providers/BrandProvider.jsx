@@ -1,14 +1,31 @@
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext  } from "react"
 import BrandContext from "../contexts/BrandContext"
+import DealerContext from "../contexts/DealerContext"
 
 function BrandProvider({children}) {
+    const { currentUser } = useContext(DealerContext)
 
     const [ brands, setBrands ] = useState([])
+    const [dealerBrands, setDealerBrands] = useState(null)
+    const [selectedBrand, setSelectedBrand] = useState("")
 
     useEffect(() => {
         fetchBrands()
     },[])
+
+    useEffect(() => {
+        if (!currentUser || !currentUser.brands) return
+        const filtered = brands.filter(b => (
+            currentUser.brands.includes(b.name.toLowerCase())
+        ))
+        setDealerBrands(filtered)
+    },[brands, currentUser])
+
+    const onBrandSelect = (e) => {
+        const { value} = e.currentTarget
+        setSelectedBrand(value)
+    }
 
     async function fetchBrands() {
         try{
@@ -24,7 +41,7 @@ function BrandProvider({children}) {
     return (
     <>
     <BrandContext.Provider
-    value={{ brands }}
+    value={{ brands, dealerBrands, selectedBrand, onBrandSelect }}
     >
         {children}
     </BrandContext.Provider>

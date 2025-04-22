@@ -1,20 +1,43 @@
 import { useContext } from "react"
 import { Navigate } from "react-router-dom"
 import DealerContext from "../contexts/DealerContext"
-import LogButton from "../components/LogButton"
+import BrandContext from "../contexts/BrandContext"
+import DealerLogButton from "../components/DealerLogButton"
+import DealerBrandSelect from "../components/DealerBrandSelect"
+import viteLogo from '/vite.svg'
 
 function Dashboard() {
-    const { currentUser } = useContext(DealerContext)
-    
+    const { selectedBrand } = useContext(BrandContext)
+    const { currentUser, isHydrated } = useContext(DealerContext)
+
+    if (!isHydrated) return null 
+
     if (!currentUser?.dealer_name) {
         return <Navigate to="/login" replace />
       }
 
 return (
 <>
-<LogButton />
-<h1>{currentUser?.dealer_name || "Not logged in"}</h1>
+<header>
+<div>
+<img
+  src={viteLogo}
+  className="logo"
+  alt="Vite logo"
+  style={{
+    filter: currentUser?.dealer_name
+      ? 'none'           
+      : 'grayscale(1)'    
+  }}
+/>
+</div>
+</header>
+<main>
+<DealerLogButton />
+<DealerBrandSelect />
+<h2>{currentUser?.dealer_name || "Not logged in"}</h2>
 
+</main>
 </>
 )}
 
