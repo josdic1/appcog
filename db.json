@@ -129,6 +129,13 @@
       "lease": "{YEAR} GMC {MODEL} lease — {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {TECH_PACKAGE}.",
       "updated_on": "2025-04-21T18:45:00.000Z",
       "variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "EXPIRATION_DATE", "MONTHLY_PAYMENT", "LEASE_TERM", "TECH_PACKAGE"]
+    },
+    {
+      "brand": "mercedes",
+      "buy": "Buy Expires {EXPIRATION_DATE}.",
+      "lease": "Lease Expires {EXPIRATION_DATE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "variables": ["EXPIRATION_DATE"]
     }
   ]
       

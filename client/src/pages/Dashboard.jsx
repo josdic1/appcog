@@ -4,10 +4,11 @@ import DealerContext from "../contexts/DealerContext"
 import BrandContext from "../contexts/BrandContext"
 import DealerLogButton from "../components/DealerLogButton"
 import DealerBrandSelect from "../components/DealerBrandSelect"
+import DealerTemplateForm from "../components/DealerTemplateForm"
 import viteLogo from '/vite.svg'
 
 function Dashboard() {
-    const { selectedBrand } = useContext(BrandContext)
+    const {  } = useContext(BrandContext)
     const { currentUser, isHydrated } = useContext(DealerContext)
 
     if (!isHydrated) return null 
@@ -35,6 +36,7 @@ return (
 <main>
 <DealerLogButton />
 <DealerBrandSelect />
+<DealerTemplateForm />
 <h2>{currentUser?.dealer_name || "Not logged in"}</h2>
 
 </main>
