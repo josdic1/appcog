@@ -18,7 +18,7 @@ function LoadModeProvider({children}) {
 return (
 <>
 <LoadModeContext.Provider
-    value={{ }}
+    value={{ isLoaded, setIsLoaded }}
 >
     {children}
 </LoadModeContext.Provider>

@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import DealerContext from "../contexts/DealerContext"
+import LoadModeContext from "../contexts/LoadModeContext"
 
 
 function DealerProvider({children}) {
-
-    const  [isLoggedIn, setisLoggedIn] = useState(false)
+    const { setIsLoaded } = useContext(LoadModeContext)
     const [ dealers, setDealers ] = useState([])
     const [ loginInfo, setLoginInfo ] = useState({
         username: '',
@@ -14,6 +14,14 @@ function DealerProvider({children}) {
     const [currentUser, setCurrentUser] = useState(null)
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+        const stored = localStorage.getItem("user")
+        if (stored) {
+          setCurrentUser(JSON.parse(stored))
+        }
+      }, [])
+      
 
     useEffect(() => {
         fetchDealers()
@@ -32,22 +40,25 @@ function DealerProvider({children}) {
         const match = dealers.find(
           d => d.usercode === loginInfo.username && d.passcode === loginInfo.password
         )
-      
         if (!match) {
           alert("Invalid login ❌")
           return
-        }
-      
+        } else {
         setCurrentUser(match)
+        localStorage.setItem("user", JSON.stringify(match))
         navigate('/home')
+      }}
+      
+      const onLogout = () => {
+        setCurrentUser(null)
+        localStorage.removeItem("user")
+        navigate("login")
+        onClearClick()
       }
 
-    const onClearClick = () => {
-        setLoginInfo({
-        username: '',
-        password: ''
-        })
-    }
+      const onClearClick = () => {
+        setLoginInfo({ username: '', password: '' })
+      }
 
     async function fetchDealers() {
         try{
@@ -57,6 +68,7 @@ function DealerProvider({children}) {
             }
             const data = await r.json()
             setDealers(data)
+            setIsLoaded(true)
         }catch (error) {console.error("❌ Caught error:", error);}
     }
 
@@ -65,7 +77,7 @@ function DealerProvider({children}) {
     return (
     <>
     <DealerContext.Provider
-    value={{ currentUser, dealers, loginInfo, isLoggedIn, onLoginInput, onLoginClick, onClearClick }}
+    value={{ currentUser, dealers, loginInfo, onLoginInput, onLoginClick, onClearClick, onLogout }}
     >
         {children}
     </DealerContext.Provider>
