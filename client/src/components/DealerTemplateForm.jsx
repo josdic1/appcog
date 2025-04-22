@@ -1,49 +1,39 @@
 import { useState, useEffect, useContext } from "react"
 import BrandContext from "../contexts/BrandContext"
 import TemplateContext from "../contexts/TemplateContext"
+import DealerVariableInputGroup from "../components/DealerVariableInputGroup"
+import DealerTemplateButtons from "../components/DealerTemplateButtons"
 
 function DealerTemplateForm() {
-    const { selectedBrand } = useContext(BrandContext)
-    const { selectedTemplate, variableList } = useContext(TemplateContext)
-   
-    const [buttons, setButtons] = useState('')
-    const [template, setTemplate] = useState('')
+  const { selectedBrand } = useContext(BrandContext)
+  const { selectedTemplate, variableList } = useContext(TemplateContext)
 
+  const [variableInputs, setVariableInputs] = useState('')
+  const [template, setTemplate] = useState('')
 
-    useEffect(() => {
-        if(selectedBrand !== "" && selectedTemplate.brand !== "") {
-            renderButtons()
-        }
-    },[selectedBrand, selectedTemplate])
+  const onTemplateButtonClick = (e) => {
+    const { name } = e.currentTarget
+    const vars =
+      name === "buy"
+        ? selectedTemplate.buy_variables
+        : selectedTemplate.lease_variables
 
-    if (!selectedBrand) return null
+    setVariableInputs(
+      <DealerVariableInputGroup variables={vars} variableList={variableList} />
+    )
+  }
 
-    const onTemplateButtonClick = (e) => {
-        const { name } = e.currentTarget
-        switch(name) {
-            case 'buy':
-                renderBuyVariables()
-                break;
-        }
-        }
+  if (!selectedBrand) return null
 
-
-function renderButtons() {
-    const buttonData = 
+  return (
     <>
-        <button type="button" name='buy' onClick={onTemplateButtonClick}>Buy</button>
-        <button type="button" name='lease' onClick={onTemplateButtonClick}>Lease</button>
+      <div>
+        <DealerTemplateButtons onClick={onTemplateButtonClick} />
+      </div>
+      <div>{variableInputs}</div>
+      <p>{template}</p>
     </>
-    setButtons(buttonData)
+  )
 }
 
- 
-
-return (
-    <>
-    <div>{buttons}</div>
-   <p>{template}</p>
-    </>
-    )}
-
-    export default DealerTemplateForm
+export default DealerTemplateForm

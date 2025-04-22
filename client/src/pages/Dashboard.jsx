@@ -1,10 +1,9 @@
 import { useContext } from "react"
 import { Navigate } from "react-router-dom"
+import Form from "./Form"
 import DealerContext from "../contexts/DealerContext"
 import BrandContext from "../contexts/BrandContext"
-import DealerLogButton from "../components/DealerLogButton"
-import DealerBrandSelect from "../components/DealerBrandSelect"
-import DealerTemplateForm from "../components/DealerTemplateForm"
+
 import viteLogo from '/vite.svg'
 
 function Dashboard() {
@@ -34,9 +33,7 @@ return (
 </div>
 </header>
 <main>
-<DealerLogButton />
-<DealerBrandSelect />
-<DealerTemplateForm />
+<Form />
 <h2>{currentUser?.dealer_name || "Not logged in"}</h2>
 
 </main>
