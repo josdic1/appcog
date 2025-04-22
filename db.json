@@ -5,12 +5,21 @@
         {"name": "cadillac"}, 
         {"name": "dodge"}, 
         {"name": "ford"}, 
-        {"name": "gmc"}
+        {"name": "gmc"},
+        {"name": "mercedes"}
     ],
     
     "dealers": [
         {
     
+          "dealer_name": "Admin",
+          "usercode": "0000",
+          "passcode": "",
+          "dealer_id": "admin_josh",
+          "email": "thejscott5@gmail.com",
+          "brands": ["audi", "bmw", "cadillac","dodge","ford","gmc","mercedes"]
+        },
+        {
             "dealer_name": "Josh's AutoWorld",
             "usercode": "0001",
             "passcode": "josh",
