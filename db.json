@@ -10,29 +10,34 @@
     
     "dealers": [
         {
+    
             "dealer_name": "Josh's AutoWorld",
-            "code": "josh",
+            "usercode": "0001",
+            "passcode": "josh",
             "dealer_id": "multi_brand_dealer_001",
             "email": "thejscott5@gmail.com",
             "brands": ["bmw", "mercedes"]
           },
           {
             "dealer_name": "Montana Cadillac",
-            "code": "monty",
+            "usercode": "0002",
+            "passcode": "monty",
             "dealer_id": "cadillac_dealer_001",
             "email": "montanaloran@gmail.com",
             "brands": ["cadillac"]
           },
           {
             "dealer_name": "Scott Truck Depot",
-            "code": "scott",
+            "usercode": "0003",
+            "passcode": "scott",
             "dealer_id": "multi_brand_dealer_002",
             "email": "joshuadicker@gmail.com",
             "brands": ["dodge", "ford", "gmc"]
           },
           {
             "dealer_name": "Audi of Dorrance",
-            "code": "dorrie",
+            "usercode": "0004",
+            "passcode": "dorrie",
             "dealer_id": "audi_dealer_001",
             "email": "dorriegoodman@gmail.com",
             "brands": ["audi"]

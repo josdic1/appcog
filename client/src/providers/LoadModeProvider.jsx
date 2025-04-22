@@ -5,6 +5,8 @@ function LoadModeProvider({children}) {
     const [ isLoaded, setIsLoaded ] = useState(false)
     const [ inEditMode, setInEditMode ] = useState(false)
     const [ isLoggedIn, setIsLoggedIn ] = useState(false)
+
+    
 return (
 <>
 <LoadModeContext.Provider

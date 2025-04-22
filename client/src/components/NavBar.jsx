@@ -5,6 +5,7 @@ function NavBar() {
 return (
 <>
 <nav>
+<NavLink to='login'> Login </NavLink>
     <NavLink to='home'> Dashboard </NavLink>
     <NavLink to='databrands'> [brands] </NavLink>
     <NavLink to='datadealers'> [dealers] </NavLink>
