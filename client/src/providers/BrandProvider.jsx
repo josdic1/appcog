@@ -22,9 +22,9 @@ function BrandProvider({children}) {
         setDealerBrands(filtered)
     },[brands, currentUser])
 
-    const onBrandSelect = (e) => {
-        const { value} = e.currentTarget
-        setSelectedBrand(value)
+    const onBrandSelectEvent = (name, value) => {
+        name === "select" ? setSelectedBrand(value) : setSelectedBrand("")
+
     }
 
     async function fetchBrands() {
@@ -41,7 +41,7 @@ function BrandProvider({children}) {
     return (
     <>
     <BrandContext.Provider
-    value={{ brands, dealerBrands, selectedBrand, onBrandSelect }}
+    value={{ brands, dealerBrands, selectedBrand, onBrandSelectEvent }}
     >
         {children}
     </BrandContext.Provider>

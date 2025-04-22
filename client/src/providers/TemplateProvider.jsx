@@ -7,11 +7,16 @@ function TemplateProvider({children}) {
 
     const [selectedTemplate, setSelectedTemplate] = useState("")
     const [variableList, setVariableList] = useState([])
-    useEffect(() => {
-        if(selectedBrand) {
-            fetchBrandTemplate()
-        }
-    },[selectedBrand])
+    const [selectedType, setSelectedType] = useState("")
+const [filledValues, setFilledValues] = useState({})
+
+useEffect(() => {
+    if (selectedBrand) {
+      fetchBrandTemplate()
+      setSelectedType("")       // ← 🔑 this line resets Buy/Lease
+      setFilledValues({})
+    }
+  }, [selectedBrand])
 
 
 
@@ -42,7 +47,12 @@ function TemplateProvider({children}) {
 return (
 <>
 <TemplateContext.Provider
-value={{ selectedTemplate, variableList }}
+value={{    selectedTemplate,
+    variableList,
+    selectedType,
+    setSelectedType,
+    filledValues,
+    setFilledValues }}
 >
     {children}
 </TemplateContext.Provider>
