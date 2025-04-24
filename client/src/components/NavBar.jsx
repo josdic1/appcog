@@ -1,13 +1,15 @@
 import { NavLink } from "react-router-dom"
 import AuthButton from "./AuthButton"
-import CancelButton from "./CancelButton"
+
+
 
 function NavBar() {
   return (
     <nav>
       <NavLink to="/home">Dashboard</NavLink>
-      <NavLink to="/offerslist">Offers</NavLink>
-      <CancelButton />
+      <NavLink to="/offersist">Offers</NavLink>
+      <NavLink to="/dealerlist">Dealers</NavLink>
+      <NavLink to='/'>Cancel</NavLink>
       <AuthButton />
 
     </nav>

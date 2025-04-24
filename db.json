@@ -32,7 +32,7 @@
   "dealers": [
     {
       "dealer_name": "Admin",
-      "usercode": "0000",
+      "usercode": "",
       "passcode": "",
       "dealer_id": "admin_josh",
       "email": "thejscott5@gmail.com",
@@ -49,8 +49,8 @@
     },
     {
       "dealer_name": "Josh's AutoWorld",
-      "usercode": "0001",
-      "passcode": "josh",
+      "usercode": "josh",
+      "passcode": "pw",
       "dealer_id": "multi_brand_dealer_001",
       "email": "thejscott5@gmail.com",
       "brands": [
@@ -61,8 +61,8 @@
     },
     {
       "dealer_name": "Montana Cadillac",
-      "usercode": "0002",
-      "passcode": "monty",
+      "usercode": "monty",
+      "passcode": "pw",
       "dealer_id": "cadillac_dealer_001",
       "email": "montanaloran@gmail.com",
       "brands": [
@@ -72,8 +72,8 @@
     },
     {
       "dealer_name": "Scott Truck Depot",
-      "usercode": "0003",
-      "passcode": "scott",
+      "usercode": "scott",
+      "passcode": "pw",
       "dealer_id": "multi_brand_dealer_002",
       "email": "joshuadicker@gmail.com",
       "brands": [
@@ -85,8 +85,8 @@
     },
     {
       "dealer_name": "Audi of Dorrance",
-      "usercode": "0004",
-      "passcode": "dorrie",
+      "usercode": "dorrie",
+      "passcode": "pw",
       "dealer_id": "audi_dealer_001",
       "email": "dorriegoodman@gmail.com",
       "brands": [
@@ -499,41 +499,41 @@
       "id": "67d0",
       "YEAR": "2025",
       "MODEL": "G-Wagon",
-      "APR_RATE": "34",
-      "APR_TERM": "35",
-      "MSRP": "50000",
-      "EXPIRATION_DATE": "2025-11-11",
+      "APR_RATE": "1",
+      "APR_TERM": "1",
+      "MSRP": "1",
+      "EXPIRATION_DATE": "11-11-2027",
       "make": "audi",
       "type": "buy",
-      "template_filled": "Buy the 2025 Audi G-Wagon with 34% APR for 35 months. MSRP: 50000. Expires 2025-11-11.",
+      "template_filled": "Buy the 2025 audi G-Wagon with 1% APR for 1 months. MSRP: 1. Expires 11-11-2027.",
       "created_at": "2025-04-24T14:05:11.178Z"
     },
     {
       "id": "ce5c",
-      "EXPIRATION_DATE": "2025-04-01",
-      "make": "mercedes",
+      "EXPIRATION_DATE": "2025-07-01",
+      "make": "mercedess",
       "type": "lease",
-      "template_filled": "Lease Expires 2025-04-01.",
+      "template_filled": "Buy the undefined mercedess undefined with undefined% APR for undefined months. MSRP: undefined. Expires 2025-07-01.",
       "created_at": "2025-04-24T14:05:37.499Z"
     },
     {
       "id": "ac7d",
-      "YEAR": "2025",
+      "YEAR": "2021",
       "MODEL": "Escalade",
-      "APR_RATE": "3.99%",
-      "APR_TERM": "12",
-      "MSRP": "50000",
+      "APR_RATE": "2%",
+      "APR_TERM": "2",
+      "MSRP": "2",
       "make": "cadillac",
       "type": "buy",
-      "template_filled": "Finance the 2025 Cadillac Escalade at 3.99%% for 12 months. MSRP: 50000.",
+      "template_filled": "Buy the 2021 cadillac Escalade with 2%% APR for 2 months. MSRP: 2. Expires undefined.",
       "created_at": "2025-04-24T15:36:11.631Z"
     },
     {
       "id": "284e",
       "EXPIRATION_DATE": "2025-05-09",
-      "make": "mercedes",
+      "make": "mercedess",
       "type": "lease",
-      "template_filled": "Lease Expires 2025-05-09.",
+      "template_filled": "Buy the undefined mercedess undefined with undefined% APR for undefined months. MSRP: undefined. Expires 2025-05-09.",
       "created_at": "2025-04-24T16:40:29.651Z"
     }
   ]

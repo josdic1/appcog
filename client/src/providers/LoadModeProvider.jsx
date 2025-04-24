@@ -7,7 +7,7 @@ function LoadModeProvider({children}) {
 
 
     const [ isLoaded, setIsLoaded ] = useState(false)
-    const [ inEditMode, setInEditMode ] = useState(false)
+
 
 
     useEffect(() => {
@@ -18,7 +18,7 @@ function LoadModeProvider({children}) {
 return (
 <>
 <LoadModeContext.Provider
-    value={{ isLoaded, setIsLoaded, inEditMode, setInEditMode }}
+    value={{ isLoaded, setIsLoaded }}
 >
     {children}
 </LoadModeContext.Provider>

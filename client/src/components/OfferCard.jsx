@@ -1,11 +1,10 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import LoadModeContext from "../contexts/LoadModeContext"
 import CrudContext from "../contexts/CrudContext"
 
 function OfferCard({ offer }) {
   const { handleDelete } = useContext(CrudContext)
-  const {setInEditMode } = useContext(LoadModeContext)
+
 
   const navigate = useNavigate()
 
@@ -14,7 +13,6 @@ function OfferCard({ offer }) {
     const { name } = e.currentTarget
     switch(name) {
       case 'edit':
-        setInEditMode(true)
         navigate(`/edit/${offer.id}`)
         break;
       case 'view':
