@@ -1,153 +1,500 @@
 {
-    "brands": [
-        {"name": "audi"}, 
-        {"name": "bmw"}, 
-        {"name": "cadillac"}, 
-        {"name": "dodge"}, 
-        {"name": "ford"}, 
-        {"name": "gmc"},
-        {"name": "mercedes"}
-    ],
-    
-    "dealers": [
-        {
-    
-          "dealer_name": "Admin",
-          "usercode": "0000",
-          "passcode": "",
-          "dealer_id": "admin_josh",
-          "email": "thejscott5@gmail.com",
-          "brands": ["audi", "bmw", "cadillac","dodge","ford","gmc","mercedes"]
-        },
-        {
-            "dealer_name": "Josh's AutoWorld",
-            "usercode": "0001",
-            "passcode": "josh",
-            "dealer_id": "multi_brand_dealer_001",
-            "email": "thejscott5@gmail.com",
-            "brands": ["bmw", "mercedes"]
-          },
-          {
-            "dealer_name": "Montana Cadillac",
-            "usercode": "0002",
-            "passcode": "monty",
-            "dealer_id": "cadillac_dealer_001",
-            "email": "montanaloran@gmail.com",
-            "brands": ["cadillac"]
-          },
-          {
-            "dealer_name": "Scott Truck Depot",
-            "usercode": "0003",
-            "passcode": "scott",
-            "dealer_id": "multi_brand_dealer_002",
-            "email": "joshuadicker@gmail.com",
-            "brands": ["dodge", "ford", "gmc"]
-          },
-          {
-            "dealer_name": "Audi of Dorrance",
-            "usercode": "0004",
-            "passcode": "dorrie",
-            "dealer_id": "audi_dealer_001",
-            "email": "dorriegoodman@gmail.com",
-            "brands": ["audi"]
-          }
-    ],
-    
-        "variables": [
-          { "key": "YEAR", "label": "Model Year", "type": "text", "required": true, "category": "vehicle" },
-          { "key": "MODEL", "label": "Model Name", "type": "text", "required": true, "category": "vehicle" },
-          { "key": "MSRP", "label": "MSRP", "type": "currency", "required": true, "category": "pricing" },
-          { "key": "APR_RATE", "label": "APR Rate", "type": "percentage", "required": false, "category": "finance" },
-          { "key": "APR_TERM", "label": "APR Term (months)", "type": "number", "required": false, "category": "finance" },
-          { "key": "MONTHLY_PAYMENT", "label": "Monthly Payment", "type": "currency", "required": true, "category": "pricing" },
-          { "key": "MONTHLY_COST_PER_1000_FINANCED", "label": "Monthly Cost per $1000 Financed", "type": "currency", "required": false, "category": "finance" },
-          { "key": "LEASE_TERM", "label": "Lease Term (months)", "type": "number", "required": false, "category": "finance" },
-          { "key": "CASH_DUE_AT_SIGNING", "label": "Cash Due at Signing", "type": "currency", "required": false, "category": "pricing" },
-          { "key": "DOWN_PAYMENT", "label": "Down Payment", "type": "currency", "required": false, "category": "pricing" },
-          { "key": "GROSS_CAP_COST", "label": "Gross Capitalized Cost", "type": "currency", "required": false, "category": "pricing" },
-          { "key": "OPTIONAL_PACKAGE", "label": "Optional Package", "type": "text", "required": false, "category": "vehicle" },
-          { "key": "TOTAL_MONTHLY_PAYMENTS", "label": "Total Monthly Payments", "type": "currency", "required": false, "category": "pricing" },
-          { "key": "ACQUISITION_FEE", "label": "Acquisition Fee", "type": "currency", "required": false, "category": "fees" },
-          { "key": "FIRST_MONTH_PAYMENT", "label": "First Month Payment", "type": "currency", "required": false, "category": "pricing" },
-          { "key": "TOTAL_PAYMENTS", "label": "Total Payments", "type": "currency", "required": false, "category": "pricing" },
-          { "key": "OVERAGE_COST_PER_MILE", "label": "Overage Cost per Mile", "type": "currency", "required": false, "category": "fees" },
-          { "key": "MILEAGE_ALLOWANCE", "label": "Mileage Allowance", "type": "number", "required": false, "category": "terms" },
-          { "key": "TURN_IN_FEE", "label": "Vehicle Turn-In Fee", "type": "currency", "required": false, "category": "fees" },
-          { "key": "PURCHASE_OPTION", "label": "Purchase Option at End", "type": "currency", "required": false, "category": "terms" },
-          { "key": "LEASE_CASH", "label": "Lease Cash Incentive", "type": "currency", "required": false, "category": "incentives" },
-          { "key": "MILITARY_INCENTIVE", "label": "Military Incentive", "type": "percentage", "required": false, "category": "incentives" },
-          { "key": "LOYALTY_INCENTIVE", "label": "Loyalty Incentive", "type": "percentage", "required": false, "category": "incentives" },
-          { "key": "RESIDUAL_VALUE", "label": "Residual Value", "type": "currency", "required": false, "category": "finance" },
-          { "key": "VIN", "label": "VIN", "type": "text", "required": false, "category": "vehicle" },
-          { "key": "STOCK_NUMBER", "label": "Stock Number", "type": "text", "required": false, "category": "vehicle" },
-          { "key": "TECH_PACKAGE", "label": "Tech Package", "type": "text", "required": false, "category": "vehicle" },
-          { "key": "WARRANTY_YEARS", "label": "Warranty (Years)", "type": "number", "required": false, "category": "terms" },
-          { "key": "LUXURY_PACKAGE", "label": "Luxury Package", "type": "text", "required": false, "category": "vehicle" },
-          { "key": "FUEL_TYPE", "label": "Fuel Type", "type": "text", "required": false, "category": "vehicle" },
-          { "key": "BATTERY_RANGE", "label": "Battery Range (miles)", "type": "number", "required": false, "category": "vehicle" },
-          { "key": "EXPIRATION_DATE", "label": "Offer Expiration Date", "type": "date", "required": true, "category": "meta" }
-        ],
-    "templates": [
-  {
-    "brand": "audi",
-    "buy": "Buy the {YEAR} Audi {MODEL} with {APR_RATE}% APR for {APR_TERM} months. MSRP: {MSRP}. Expires {EXPIRATION_DATE}.",
-    "lease": "Lease the {YEAR} Audi {MODEL} for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
-    "updated_on": "2025-04-21T18:45:00.000Z",
-    "buy_variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "MSRP", "EXPIRATION_DATE"],
-    "lease_variables": ["YEAR", "MODEL", "MONTHLY_PAYMENT", "LEASE_TERM", "EXPIRATION_DATE"]
-  },
-  {
-    "brand": "bmw",
-    "buy": "{YEAR} BMW {MODEL} — {APR_RATE}% APR for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
-    "lease": "{YEAR} BMW {MODEL}, lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {LUXURY_PACKAGE}.",
-    "updated_on": "2025-04-21T18:45:00.000Z",
-    "buy_variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "EXPIRATION_DATE"],
-    "lease_variables": ["YEAR", "MODEL", "MONTHLY_PAYMENT", "LEASE_TERM", "LUXURY_PACKAGE"]
-  },
-  {
-    "brand": "cadillac",
-    "buy": "Finance the {YEAR} Cadillac {MODEL} at {APR_RATE}% for {APR_TERM} months. MSRP: {MSRP}.",
-    "lease": "{YEAR} Cadillac {MODEL} lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
-    "updated_on": "2025-04-21T18:45:00.000Z",
-    "buy_variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "MSRP"],
-    "lease_variables": ["YEAR", "MODEL", "MONTHLY_PAYMENT", "LEASE_TERM", "EXPIRATION_DATE"]
-  },
-  {
-    "brand": "dodge",
-    "buy": "{YEAR} Dodge {MODEL}. Finance at {APR_RATE}% APR for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
-    "lease": "Lease the {YEAR} Dodge {MODEL} for {MONTHLY_PAYMENT}/mo. Term: {LEASE_TERM} months.",
-    "updated_on": "2025-04-21T18:45:00.000Z",
-    "buy_variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "EXPIRATION_DATE"],
-    "lease_variables": ["YEAR", "MODEL", "MONTHLY_PAYMENT", "LEASE_TERM"]
-  },
-  {
-    "brand": "ford",
-    "buy": "{YEAR} Ford {MODEL}. Get {APR_RATE}% financing for {APR_TERM} months. Fuel type: {FUEL_TYPE}.",
-    "lease": "Lease {YEAR} Ford {MODEL} for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
-    "updated_on": "2025-04-21T18:45:00.000Z",
-    "buy_variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "FUEL_TYPE"],
-    "lease_variables": ["YEAR", "MODEL", "MONTHLY_PAYMENT", "LEASE_TERM", "EXPIRATION_DATE"]
-  },
-  {
-    "brand": "gmc",
-    "buy": "Finance your {YEAR} GMC {MODEL} at {APR_RATE}% for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
-    "lease": "{YEAR} GMC {MODEL} lease — {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {TECH_PACKAGE}.",
-    "updated_on": "2025-04-21T18:45:00.000Z",
-    "buy_variables": ["YEAR", "MODEL", "APR_RATE", "APR_TERM", "EXPIRATION_DATE"],
-    "lease_variables": ["YEAR", "MODEL", "MONTHLY_PAYMENT", "LEASE_TERM", "TECH_PACKAGE"]
-  },
-  {
-    "brand": "mercedes",
-    "buy": "Buy Expires {EXPIRATION_DATE}.",
-    "lease": "Lease Expires {EXPIRATION_DATE}.",
-    "updated_on": "2025-04-21T18:45:00.000Z",
-    "buy_variables": ["EXPIRATION_DATE"],
-    "lease_variables": ["EXPIRATION_DATE"]
-  }
-],
-"offers" : [
-  {}
-]
-
-      
+  "brands": [
+    {
+      "name": "audi",
+      "id": "5e28"
+    },
+    {
+      "name": "bmw",
+      "id": "8caf"
+    },
+    {
+      "name": "cadillac",
+      "id": "9285"
+    },
+    {
+      "name": "dodge",
+      "id": "22cd"
+    },
+    {
+      "name": "ford",
+      "id": "3843"
+    },
+    {
+      "name": "gmc",
+      "id": "3041"
+    },
+    {
+      "name": "mercedes",
+      "id": "30c9"
+    }
+  ],
+  "dealers": [
+    {
+      "dealer_name": "Admin",
+      "usercode": "0000",
+      "passcode": "",
+      "dealer_id": "admin_josh",
+      "email": "thejscott5@gmail.com",
+      "brands": [
+        "audi",
+        "bmw",
+        "cadillac",
+        "dodge",
+        "ford",
+        "gmc",
+        "mercedes"
+      ],
+      "id": "0528"
+    },
+    {
+      "dealer_name": "Josh's AutoWorld",
+      "usercode": "0001",
+      "passcode": "josh",
+      "dealer_id": "multi_brand_dealer_001",
+      "email": "thejscott5@gmail.com",
+      "brands": [
+        "bmw",
+        "mercedes"
+      ],
+      "id": "fe61"
+    },
+    {
+      "dealer_name": "Montana Cadillac",
+      "usercode": "0002",
+      "passcode": "monty",
+      "dealer_id": "cadillac_dealer_001",
+      "email": "montanaloran@gmail.com",
+      "brands": [
+        "cadillac"
+      ],
+      "id": "0ab2"
+    },
+    {
+      "dealer_name": "Scott Truck Depot",
+      "usercode": "0003",
+      "passcode": "scott",
+      "dealer_id": "multi_brand_dealer_002",
+      "email": "joshuadicker@gmail.com",
+      "brands": [
+        "dodge",
+        "ford",
+        "gmc"
+      ],
+      "id": "e2e6"
+    },
+    {
+      "dealer_name": "Audi of Dorrance",
+      "usercode": "0004",
+      "passcode": "dorrie",
+      "dealer_id": "audi_dealer_001",
+      "email": "dorriegoodman@gmail.com",
+      "brands": [
+        "audi"
+      ],
+      "id": "2b33"
+    }
+  ],
+  "variables": [
+    {
+      "key": "YEAR",
+      "label": "Model Year",
+      "type": "text",
+      "required": true,
+      "category": "vehicle",
+      "id": "491a"
+    },
+    {
+      "key": "MODEL",
+      "label": "Model Name",
+      "type": "text",
+      "required": true,
+      "category": "vehicle",
+      "id": "57df"
+    },
+    {
+      "key": "MSRP",
+      "label": "MSRP",
+      "type": "currency",
+      "required": true,
+      "category": "pricing",
+      "id": "e4f2"
+    },
+    {
+      "key": "APR_RATE",
+      "label": "APR Rate",
+      "type": "percentage",
+      "required": false,
+      "category": "finance",
+      "id": "aa82"
+    },
+    {
+      "key": "APR_TERM",
+      "label": "APR Term (months)",
+      "type": "number",
+      "required": false,
+      "category": "finance",
+      "id": "a7c6"
+    },
+    {
+      "key": "MONTHLY_PAYMENT",
+      "label": "Monthly Payment",
+      "type": "currency",
+      "required": true,
+      "category": "pricing",
+      "id": "8157"
+    },
+    {
+      "key": "MONTHLY_COST_PER_1000_FINANCED",
+      "label": "Monthly Cost per $1000 Financed",
+      "type": "currency",
+      "required": false,
+      "category": "finance",
+      "id": "7311"
+    },
+    {
+      "key": "LEASE_TERM",
+      "label": "Lease Term (months)",
+      "type": "number",
+      "required": false,
+      "category": "finance",
+      "id": "5b0d"
+    },
+    {
+      "key": "CASH_DUE_AT_SIGNING",
+      "label": "Cash Due at Signing",
+      "type": "currency",
+      "required": false,
+      "category": "pricing",
+      "id": "0eff"
+    },
+    {
+      "key": "DOWN_PAYMENT",
+      "label": "Down Payment",
+      "type": "currency",
+      "required": false,
+      "category": "pricing",
+      "id": "8ad5"
+    },
+    {
+      "key": "GROSS_CAP_COST",
+      "label": "Gross Capitalized Cost",
+      "type": "currency",
+      "required": false,
+      "category": "pricing",
+      "id": "22fb"
+    },
+    {
+      "key": "OPTIONAL_PACKAGE",
+      "label": "Optional Package",
+      "type": "text",
+      "required": false,
+      "category": "vehicle",
+      "id": "da62"
+    },
+    {
+      "key": "TOTAL_MONTHLY_PAYMENTS",
+      "label": "Total Monthly Payments",
+      "type": "currency",
+      "required": false,
+      "category": "pricing",
+      "id": "31bc"
+    },
+    {
+      "key": "ACQUISITION_FEE",
+      "label": "Acquisition Fee",
+      "type": "currency",
+      "required": false,
+      "category": "fees",
+      "id": "ff1a"
+    },
+    {
+      "key": "FIRST_MONTH_PAYMENT",
+      "label": "First Month Payment",
+      "type": "currency",
+      "required": false,
+      "category": "pricing",
+      "id": "a5ef"
+    },
+    {
+      "key": "TOTAL_PAYMENTS",
+      "label": "Total Payments",
+      "type": "currency",
+      "required": false,
+      "category": "pricing",
+      "id": "0eb7"
+    },
+    {
+      "key": "OVERAGE_COST_PER_MILE",
+      "label": "Overage Cost per Mile",
+      "type": "currency",
+      "required": false,
+      "category": "fees",
+      "id": "2cb5"
+    },
+    {
+      "key": "MILEAGE_ALLOWANCE",
+      "label": "Mileage Allowance",
+      "type": "number",
+      "required": false,
+      "category": "terms",
+      "id": "c5c5"
+    },
+    {
+      "key": "TURN_IN_FEE",
+      "label": "Vehicle Turn-In Fee",
+      "type": "currency",
+      "required": false,
+      "category": "fees",
+      "id": "a6b0"
+    },
+    {
+      "key": "PURCHASE_OPTION",
+      "label": "Purchase Option at End",
+      "type": "currency",
+      "required": false,
+      "category": "terms",
+      "id": "fbda"
+    },
+    {
+      "key": "LEASE_CASH",
+      "label": "Lease Cash Incentive",
+      "type": "currency",
+      "required": false,
+      "category": "incentives",
+      "id": "e6fe"
+    },
+    {
+      "key": "MILITARY_INCENTIVE",
+      "label": "Military Incentive",
+      "type": "percentage",
+      "required": false,
+      "category": "incentives",
+      "id": "1d1b"
+    },
+    {
+      "key": "LOYALTY_INCENTIVE",
+      "label": "Loyalty Incentive",
+      "type": "percentage",
+      "required": false,
+      "category": "incentives",
+      "id": "fee4"
+    },
+    {
+      "key": "RESIDUAL_VALUE",
+      "label": "Residual Value",
+      "type": "currency",
+      "required": false,
+      "category": "finance",
+      "id": "1b0d"
+    },
+    {
+      "key": "VIN",
+      "label": "VIN",
+      "type": "text",
+      "required": false,
+      "category": "vehicle",
+      "id": "2b0b"
+    },
+    {
+      "key": "STOCK_NUMBER",
+      "label": "Stock Number",
+      "type": "text",
+      "required": false,
+      "category": "vehicle",
+      "id": "2ac2"
+    },
+    {
+      "key": "TECH_PACKAGE",
+      "label": "Tech Package",
+      "type": "text",
+      "required": false,
+      "category": "vehicle",
+      "id": "da40"
+    },
+    {
+      "key": "WARRANTY_YEARS",
+      "label": "Warranty (Years)",
+      "type": "number",
+      "required": false,
+      "category": "terms",
+      "id": "9f98"
+    },
+    {
+      "key": "LUXURY_PACKAGE",
+      "label": "Luxury Package",
+      "type": "text",
+      "required": false,
+      "category": "vehicle",
+      "id": "a148"
+    },
+    {
+      "key": "FUEL_TYPE",
+      "label": "Fuel Type",
+      "type": "text",
+      "required": false,
+      "category": "vehicle",
+      "id": "201a"
+    },
+    {
+      "key": "BATTERY_RANGE",
+      "label": "Battery Range (miles)",
+      "type": "number",
+      "required": false,
+      "category": "vehicle",
+      "id": "2493"
+    },
+    {
+      "key": "EXPIRATION_DATE",
+      "label": "Offer Expiration Date",
+      "type": "date",
+      "required": true,
+      "category": "meta",
+      "id": "8a95"
+    }
+  ],
+  "templates": [
+    {
+      "brand": "audi",
+      "buy": "Buy the {YEAR} Audi {MODEL} with {APR_RATE}% APR for {APR_TERM} months. MSRP: {MSRP}. Expires {EXPIRATION_DATE}.",
+      "lease": "Lease the {YEAR} Audi {MODEL} for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "buy_variables": [
+        "YEAR",
+        "MODEL",
+        "APR_RATE",
+        "APR_TERM",
+        "MSRP",
+        "EXPIRATION_DATE"
+      ],
+      "lease_variables": [
+        "YEAR",
+        "MODEL",
+        "MONTHLY_PAYMENT",
+        "LEASE_TERM",
+        "EXPIRATION_DATE"
+      ],
+      "id": "01db"
+    },
+    {
+      "brand": "bmw",
+      "buy": "{YEAR} BMW {MODEL} — {APR_RATE}% APR for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
+      "lease": "{YEAR} BMW {MODEL}, lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {LUXURY_PACKAGE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "buy_variables": [
+        "YEAR",
+        "MODEL",
+        "APR_RATE",
+        "APR_TERM",
+        "EXPIRATION_DATE"
+      ],
+      "lease_variables": [
+        "YEAR",
+        "MODEL",
+        "MONTHLY_PAYMENT",
+        "LEASE_TERM",
+        "LUXURY_PACKAGE"
+      ],
+      "id": "869a"
+    },
+    {
+      "brand": "cadillac",
+      "buy": "Finance the {YEAR} Cadillac {MODEL} at {APR_RATE}% for {APR_TERM} months. MSRP: {MSRP}.",
+      "lease": "{YEAR} Cadillac {MODEL} lease for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "buy_variables": [
+        "YEAR",
+        "MODEL",
+        "APR_RATE",
+        "APR_TERM",
+        "MSRP"
+      ],
+      "lease_variables": [
+        "YEAR",
+        "MODEL",
+        "MONTHLY_PAYMENT",
+        "LEASE_TERM",
+        "EXPIRATION_DATE"
+      ],
+      "id": "1aaf"
+    },
+    {
+      "brand": "dodge",
+      "buy": "{YEAR} Dodge {MODEL}. Finance at {APR_RATE}% APR for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
+      "lease": "Lease the {YEAR} Dodge {MODEL} for {MONTHLY_PAYMENT}/mo. Term: {LEASE_TERM} months.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "buy_variables": [
+        "YEAR",
+        "MODEL",
+        "APR_RATE",
+        "APR_TERM",
+        "EXPIRATION_DATE"
+      ],
+      "lease_variables": [
+        "YEAR",
+        "MODEL",
+        "MONTHLY_PAYMENT",
+        "LEASE_TERM"
+      ],
+      "id": "8c90"
+    },
+    {
+      "brand": "ford",
+      "buy": "{YEAR} Ford {MODEL}. Get {APR_RATE}% financing for {APR_TERM} months. Fuel type: {FUEL_TYPE}.",
+      "lease": "Lease {YEAR} Ford {MODEL} for {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Expires {EXPIRATION_DATE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "buy_variables": [
+        "YEAR",
+        "MODEL",
+        "APR_RATE",
+        "APR_TERM",
+        "FUEL_TYPE"
+      ],
+      "lease_variables": [
+        "YEAR",
+        "MODEL",
+        "MONTHLY_PAYMENT",
+        "LEASE_TERM",
+        "EXPIRATION_DATE"
+      ],
+      "id": "8c9e"
+    },
+    {
+      "brand": "gmc",
+      "buy": "Finance your {YEAR} GMC {MODEL} at {APR_RATE}% for {APR_TERM} months. Expires {EXPIRATION_DATE}.",
+      "lease": "{YEAR} GMC {MODEL} lease — {MONTHLY_PAYMENT}/mo for {LEASE_TERM} months. Includes {TECH_PACKAGE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "buy_variables": [
+        "YEAR",
+        "MODEL",
+        "APR_RATE",
+        "APR_TERM",
+        "EXPIRATION_DATE"
+      ],
+      "lease_variables": [
+        "YEAR",
+        "MODEL",
+        "MONTHLY_PAYMENT",
+        "LEASE_TERM",
+        "TECH_PACKAGE"
+      ],
+      "id": "ae1a"
+    },
+    {
+      "brand": "mercedes",
+      "buy": "Buy Expires {EXPIRATION_DATE}.",
+      "lease": "Lease Expires {EXPIRATION_DATE}.",
+      "updated_on": "2025-04-21T18:45:00.000Z",
+      "buy_variables": [
+        "EXPIRATION_DATE"
+      ],
+      "lease_variables": [
+        "EXPIRATION_DATE"
+      ],
+      "id": "7c71"
+    }
+  ],
+  "offers": [
+    {}
+  ]
 }
