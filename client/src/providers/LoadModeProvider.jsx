@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import LoadModeContext from "../contexts/LoadModeContext"
-import DealerContext from "../contexts/DealerContext"
+
 
 function LoadModeProvider({children}) {
 
@@ -18,7 +18,7 @@ function LoadModeProvider({children}) {
 return (
 <>
 <LoadModeContext.Provider
-    value={{ isLoaded, setIsLoaded }}
+    value={{ isLoaded, setIsLoaded, inEditMode, setInEditMode }}
 >
     {children}
 </LoadModeContext.Provider>

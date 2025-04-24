@@ -4,8 +4,10 @@ import BrandContext from "../contexts/BrandContext"
 import DealerContext from "../contexts/DealerContext"
 
 
+
 function BrandProvider({children}) {
     const { currentUser } = useContext(DealerContext)
+
 
     const [ brands, setBrands ] = useState([])
     const [dealerBrands, setDealerBrands] = useState(null)
@@ -28,6 +30,7 @@ function BrandProvider({children}) {
             setSelectedBrand(value)
         } else {
             setSelectedBrand("")
+       
         }
 
     }

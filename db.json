@@ -495,6 +495,26 @@
     }
   ],
   "offers": [
-    {}
+    {
+      "id": "67d0",
+      "YEAR": "2025",
+      "MODEL": "G-Wagon",
+      "APR_RATE": "34",
+      "APR_TERM": "35",
+      "MSRP": "50000",
+      "EXPIRATION_DATE": "2025-11-11",
+      "make": "audi",
+      "type": "buy",
+      "template_filled": "Buy the 2025 Audi G-Wagon with 34% APR for 35 months. MSRP: 50000. Expires 2025-11-11.",
+      "created_at": "2025-04-24T14:05:11.178Z"
+    },
+    {
+      "id": "ce5c",
+      "EXPIRATION_DATE": "2025-04-01",
+      "make": "mercedes",
+      "type": "lease",
+      "template_filled": "Lease Expires 2025-04-01.",
+      "created_at": "2025-04-24T14:05:37.499Z"
+    }
   ]
 }

@@ -5,6 +5,7 @@ function NavBar() {
   return (
     <nav>
       <NavLink to="/home">Dashboard</NavLink>
+      <NavLink to="/offerslist">Offers</NavLink>
       <AuthButton />
     </nav>
   )

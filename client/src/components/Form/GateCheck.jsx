@@ -16,7 +16,7 @@ function GateCheck() {
       <Preview />
       {missing.length > 0
         ? <p>❌ Missing: {missing.join(", ")}</p>
-        : <SubmitButton formData={formData} />}
+        : <SubmitButton  />}
     </>
   )
 }

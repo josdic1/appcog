@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import { Navigate } from "react-router-dom"
 import Form from "../components/Form"
-import NavBar from "../components/NavBar.jsx"
+
 import DealerContext from "../contexts/DealerContext"
-import viteLogo from '/vite.svg'
+
 
 function Dashboard() {
 
@@ -18,19 +18,6 @@ function Dashboard() {
 return (
 <>
 <header>
-<div>
-<img
-  src={viteLogo}
-  className="logo"
-  alt="Vite logo"
-  style={{
-    filter: currentUser?.dealer_name
-      ? 'none'           
-      : 'grayscale(1)'    
-  }}
-/>
-</div>
-<NavBar />
 </header>
 <main>
 <Form />
