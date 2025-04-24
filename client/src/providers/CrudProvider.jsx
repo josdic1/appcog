@@ -4,7 +4,6 @@ import CrudContext from "../contexts/CrudContext"
 
 function CrudProvider({children}) {
     const [ offers, setOffers ] = useState([])
-    const [ selectedOffer, setSelectedOffer] = useState({})
 
     useEffect(() => {
         fetchOffers()
@@ -43,6 +42,30 @@ async function fetchOffers() {
         }catch (error) {console.error("❌ Caught error:", error);}  
     }
 
+    async function handleUpdate(obj) {
+        if (!obj.template_filled || !obj.make || !obj.type) {
+            console.warn("❌ Submission blocked — missing required data.")
+            return
+          }
+        try {
+          const r = await fetch(`http://localhost:3000/offers/${obj.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+          })
+          if(!r.ok){
+            throw new Error("💥 Error");
+          }
+          const data = await r.json()
+         const updated = offers.map(offer => (
+            offer.id === data.id ? data : offer
+         ))
+          setOffers(updated)
+        }catch (error) {console.error("❌ Caught error:", error);}  
+    }
+
     async function handleDelete(offerId) {
         const filtered = offers.filter(o => o.id !== offerId)
         try {
@@ -60,7 +83,7 @@ async function fetchOffers() {
 return (
 <>
 <CrudContext.Provider
-    value={{ offers, selectedOffer, setSelectedOffer, handleSubmit, handleDelete }}>
+    value={{ offers, handleSubmit, handleUpdate, handleDelete }}>
         {children}
     </CrudContext.Provider>
 </>

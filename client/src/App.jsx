@@ -9,23 +9,22 @@ import './App.css'
 
 function App() {
   return (
-    <LoadModeProvider>
-      <DealerProvider>
-        <BrandProvider>
-          <TemplateProvider>
-            <CrudProvider>
-              <div>
-                <header><AppContent /></header>
-                <main>
-                  
-                  <Outlet />
-                </main>
-              </div>
-            </CrudProvider>
-          </TemplateProvider>
-        </BrandProvider>
-      </DealerProvider>
-    </LoadModeProvider>
+<LoadModeProvider>
+  <DealerProvider>
+    <BrandProvider>
+      <CrudProvider> 
+        <TemplateProvider>
+          <div>
+            <header><AppContent /></header>
+            <main>
+              <Outlet />
+            </main>
+          </div>
+        </TemplateProvider>
+      </CrudProvider>
+    </BrandProvider>
+  </DealerProvider>
+</LoadModeProvider>
   )
 }
 

@@ -4,26 +4,25 @@ import LoadModeContext from "../contexts/LoadModeContext"
 import CrudContext from "../contexts/CrudContext"
 
 function OfferCard({ offer }) {
-  const {offers, setSelectedOffer, handleDelete } = useContext(CrudContext)
+  const { handleDelete } = useContext(CrudContext)
   const {setInEditMode } = useContext(LoadModeContext)
 
   const navigate = useNavigate()
 
 
   const onClick = (e) => {
-    const { id, name } = e.currentTarget
-    const offerObj = offers.find(o => o.id === id)
+    const { name } = e.currentTarget
     switch(name) {
       case 'edit':
         setInEditMode(true)
-        setSelectedOffer(offerObj)
+
         break;
       case 'view':
-        setSelectedOffer(offerObj)
-        navigate(`/offer/${id}`)
+
+        navigate(`/offer/${offer.id}`)
         break;
       case 'delete':
-        handleDelete(id)
+        handleDelete(offer.id)
     }
   }
 

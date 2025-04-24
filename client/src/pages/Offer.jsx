@@ -1,19 +1,27 @@
+import { useState, useEffect, useContext } from "react"
 import { useParams } from "react-router-dom"
-import { useContext } from "react"
 import CrudContext from "../contexts/CrudContext"
 
 function Offer() {
-    const { selectedOffer} = useContext(CrudContext)
+
+    const { offers } = useContext(CrudContext)
+
+    const [ clickedOffer, setClickedOffer] = useState({})
     
     const { id } = useParams()
+
+    useEffect(() => {
+        const found = offers.find(o => o.id === id)
+        if(found) setClickedOffer(found)
+    },[id, offers])
 
 return (
     <>
     <h4>{id}</h4>
-    <p>{selectedOffer.make}</p>
-    <p>{selectedOffer.type}</p>
-    <p>{selectedOffer.created_at}</p>
-    <p>{selectedOffer.template_filled || 'EMPTY =('}</p>
+    <p>{clickedOffer.make}</p>
+    <p>{clickedOffer.type}</p>
+    <p>{clickedOffer.created_at}</p>
+    <p>{clickedOffer.template_filled || 'EMPTY =('}</p>
     </>
     )}
 

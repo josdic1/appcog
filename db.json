@@ -515,6 +515,18 @@
       "type": "lease",
       "template_filled": "Lease Expires 2025-04-01.",
       "created_at": "2025-04-24T14:05:37.499Z"
+    },
+    {
+      "id": "ac7d",
+      "YEAR": "2025",
+      "MODEL": "Escalade",
+      "APR_RATE": "3.99%",
+      "APR_TERM": "12",
+      "MSRP": "50000",
+      "make": "cadillac",
+      "type": "buy",
+      "template_filled": "Finance the 2025 Cadillac Escalade at 3.99%% for 12 months. MSRP: 50000.",
+      "created_at": "2025-04-24T15:36:11.631Z"
     }
   ]
 }

@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import TemplateContext from "../contexts/TemplateContext";
 import BrandContext from "../contexts/BrandContext";
 
+
 function TemplateProvider({children}) {
     const { selectedBrand } = useContext(BrandContext)
 
