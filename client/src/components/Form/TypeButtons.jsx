@@ -8,7 +8,9 @@ function TypeButtons() {
   const { selectedBrand } = useContext(BrandContext)
 
   const handleClick = (e) => {
-    setSelectedType(e.currentTarget.name)
+    const type = e.currentTarget.name
+
+    setSelectedType(type)
   }
 
   if (!selectedBrand) return null

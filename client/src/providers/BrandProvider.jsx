@@ -3,6 +3,7 @@ import { useState, useEffect, useContext  } from "react"
 import BrandContext from "../contexts/BrandContext"
 import DealerContext from "../contexts/DealerContext"
 
+
 function BrandProvider({children}) {
     const { currentUser } = useContext(DealerContext)
 
@@ -23,7 +24,11 @@ function BrandProvider({children}) {
     },[brands, currentUser])
 
     const onBrandSelectEvent = (name, value) => {
-        name === "select" ? setSelectedBrand(value) : setSelectedBrand("")
+        if(name === "select") {
+            setSelectedBrand(value)
+        } else {
+            setSelectedBrand("")
+        }
 
     }
 

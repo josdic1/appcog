@@ -5,33 +5,36 @@ import BrandContext from "../contexts/BrandContext";
 function TemplateProvider({children}) {
     const { selectedBrand } = useContext(BrandContext)
 
-    const [selectedTemplate, setSelectedTemplate] = useState("")
+    const [selectedTemplate, setSelectedTemplate] = useState(null)
     const [variableList, setVariableList] = useState([])
     const [selectedType, setSelectedType] = useState("")
-const [filledValues, setFilledValues] = useState({})
+const [formData, setFormData] = useState({})
+
 
 useEffect(() => {
-    if (selectedBrand) {
-      fetchBrandTemplate()
-      setSelectedType("")       // ← 🔑 this line resets Buy/Lease
-      setFilledValues({})
+  setSelectedType("")
+  setFormData({})
+
+  if (selectedBrand) {
+    fetchBrandTemplate()
+  } else {
+    setSelectedTemplate(null)
+  }
+}, [selectedBrand])
+
+  async function fetchBrandTemplate() {
+    try {
+      const r = await fetch(`http://localhost:3000/templates`)
+      if (!r.ok) throw new Error("💥 Error")
+      const data = await r.json()
+      const filtered = data.find(t => t.brand === selectedBrand)
+  
+      setSelectedTemplate(filtered) 
+      fetchTemplateVariables()
+    } catch (error) {
+      console.error("❌ Caught error:", error)
     }
-  }, [selectedBrand])
-
-
-
-    async function fetchBrandTemplate() {
-        try{
-            const r = await fetch(`http://localhost:3000/templates`)
-            if(!r.ok){
-                throw new Error("💥 Error");
-            }
-            const data = await r.json()
-            const filtered = data.find(t => t.brand === selectedBrand)
-            setSelectedTemplate(filtered)
-            fetchTemplateVariables()
-        }catch (error) {console.error("❌ Caught error:", error);}
-    }
+  }
 
     async function fetchTemplateVariables() {
         try{
@@ -51,8 +54,8 @@ value={{    selectedTemplate,
     variableList,
     selectedType,
     setSelectedType,
-    filledValues,
-    setFilledValues }}
+    formData,
+    setFormData }}
 >
     {children}
 </TemplateContext.Provider>

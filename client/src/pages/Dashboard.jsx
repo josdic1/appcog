@@ -1,9 +1,8 @@
 import { useContext } from "react"
 import { Navigate } from "react-router-dom"
 import Form from "../components/Form"
+import NavBar from "../components/NavBar.jsx"
 import DealerContext from "../contexts/DealerContext"
-
-
 import viteLogo from '/vite.svg'
 
 function Dashboard() {
@@ -31,6 +30,7 @@ return (
   }}
 />
 </div>
+<NavBar />
 </header>
 <main>
 <Form />

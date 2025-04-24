@@ -144,6 +144,9 @@
     "buy_variables": ["EXPIRATION_DATE"],
     "lease_variables": ["EXPIRATION_DATE"]
   }
+],
+"offers" : [
+  {}
 ]
 
       
