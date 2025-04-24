@@ -3,14 +3,17 @@ import { useContext } from 'react'
 import LoadModeContext from '../contexts/LoadModeContext'
 import DealerContext from '../contexts/DealerContext'
 import NavBar from './NavBar'
+import { Outlet } from "react-router-dom"
 
 function AppContent() {
     const { inEditMode } = useContext(LoadModeContext)
     const { currentUser } = useContext(DealerContext)
+
+   
 return (
 <>
 <header>
-<NavBar/>
+{!currentUser ? "" : <NavBar/>}
 </header>
 <main>
 <div>
@@ -26,6 +29,7 @@ return (
 />
 {inEditMode && <p className="edit-banner">✏️ Edit Mode Enabled</p>}
 </div>
+<Outlet />
 </main>
 </>
 )}

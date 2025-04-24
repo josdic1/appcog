@@ -15,7 +15,7 @@ function OfferCard({ offer }) {
     switch(name) {
       case 'edit':
         setInEditMode(true)
-
+        navigate(`/edit/${offer.id}`)
         break;
       case 'view':
 

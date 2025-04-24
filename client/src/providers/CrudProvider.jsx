@@ -4,6 +4,7 @@ import CrudContext from "../contexts/CrudContext"
 
 function CrudProvider({children}) {
     const [ offers, setOffers ] = useState([])
+ 
 
     useEffect(() => {
         fetchOffers()
@@ -83,7 +84,7 @@ async function fetchOffers() {
 return (
 <>
 <CrudContext.Provider
-    value={{ offers, handleSubmit, handleUpdate, handleDelete }}>
+    value={{ offers,  handleSubmit, handleUpdate, handleDelete }}>
         {children}
     </CrudContext.Provider>
 </>

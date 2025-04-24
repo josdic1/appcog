@@ -2,11 +2,12 @@ import { useContext } from "react"
 import BrandContext from "../../contexts/BrandContext"
 import CrudContext from "../../contexts/CrudContext"
 import TemplateContext from "../../contexts/TemplateContext"
-import LoadModeContext from "../../contexts/LoadModeContext"
+
 
 function SubmitButton() {
   const { selectedBrand, onBrandSelectEvent } = useContext(BrandContext)
   const { handleSubmit } = useContext(CrudContext)
+
   const { selectedTemplate, selectedType, formData } = useContext(TemplateContext)
 
   const rawTemplate = selectedTemplate[selectedType]
@@ -18,7 +19,9 @@ function SubmitButton() {
       : `[${key}]`
   })
 
-  const onClick = () => {
+
+  function onSubmit(e) {
+    e.preventDefault()
     const obj = {
         ...formData,
         make: selectedBrand,
@@ -30,7 +33,16 @@ function SubmitButton() {
     onBrandSelectEvent("clear", "")
   }
 
-  return <button type="button" onClick={onClick}>Submit</button>
+
+  return (
+    <>
+    <form onSubmit={onSubmit}>
+    <button type="submit" >
+      Submit
+    </button>
+    </form>
+    </>
+  )
 }
 
 export default SubmitButton
