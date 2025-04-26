@@ -121,7 +121,7 @@ function DealerProvider({children}) {
         const r = await fetch(`http://localhost:3000/dealers/${dealerId}`, {
           method: "DELETE",
         })
-        if (!r.ok) throw new Error("Failed to update dealer")
+        if (!r.ok) throw new Error("Failed to delete dealer")
        const filtered = [...dealers].filter(d => d.id !== dealerId)
       setDealers(filtered)
       } catch (error) {

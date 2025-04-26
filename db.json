@@ -49,15 +49,15 @@
       "id": "0528"
     },
     {
-      "dealer_name": "Josh's AutoWorld",
+      "dealer_name": "Josh AutoWorld of Union",
       "owner": "Josh Dicker",
       "usercode": "josh",
       "passcode": "pw",
       "dealer_id": "multi_brand_dealer_001",
       "email": "thejscott5@gmail.com",
       "brands": [
-        "dodge",
-        "ford"
+        "gmc",
+        "bmw"
       ],
       "id": "fe61"
     },
@@ -83,7 +83,8 @@
       "brands": [
         "dodge",
         "ford",
-        "gmc"
+        "gmc",
+        "cadillac"
       ],
       "id": "e2e6"
     },
@@ -552,6 +553,18 @@
       "type": "lease",
       "template_filled": "Buy the 2025 cadillac Escalade Turbo with undefined% APR for undefined months. MSRP: undefined. Expires 2025-05-02.",
       "created_at": "2025-04-26T13:45:29.019Z"
+    },
+    {
+      "id": "d800",
+      "YEAR": "2025",
+      "MODEL": "G-Wagon",
+      "MONTHLY_PAYMENT": "$299",
+      "LEASE_TERM": "26",
+      "EXPIRATION_DATE": "2025-04-22",
+      "make": "audi",
+      "type": "lease",
+      "template_filled": "Lease the 2025 Audi G-Wagon for $299/mo for 26 months. Expires 2025-04-22.",
+      "created_at": "2025-04-26T19:23:13.327Z"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import CrudContext from "../contexts/CrudContext"
 import OfferCard from "../components/OfferCard"
 import Filter from "../components/List/Filter"
@@ -15,7 +16,7 @@ useEffect(() => {
   setFilteredList(offers)
 }, [offers])
 
-
+const navigate = useNavigate()
 
     const offerlistData = filteredList.map(offer => (
         <OfferCard key={offer.id} offer={offer} />
@@ -37,6 +38,7 @@ useEffect(() => {
 
 return (
 <>
+<button type="button" onClick={() => navigate('/home')}>New Offer</button><br></br>
 <Filter filterObj={filterObj} onFilterChange={handleFilterChange}/>
     <table>
         <thead>

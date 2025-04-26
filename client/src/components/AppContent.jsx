@@ -1,6 +1,6 @@
 import viteLogo from '/vite.svg'
 import { useContext } from 'react'
-import AuthButton from "./AuthButton"
+
 import DealerContext from '../contexts/DealerContext'
 import NavBar from './NavBar'
 import { Outlet } from "react-router-dom"
@@ -29,7 +29,7 @@ function AppContent() {
               }}
             />
           </div>
-          <AuthButton />
+
           <Outlet />
         </main>
       </>

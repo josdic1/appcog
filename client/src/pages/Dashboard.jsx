@@ -18,10 +18,11 @@ function Dashboard() {
 return (
 <>
 <header>
+<h2>{`Logged in as ${currentUser?.dealer_name}` || "Not logged in"}</h2>
 </header>
 <main>
 <Form />
-<h2>{currentUser?.dealer_name || "Not logged in"}</h2>
+
 
 </main>
 </>
