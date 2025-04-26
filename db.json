@@ -32,6 +32,7 @@
   "dealers": [
     {
       "dealer_name": "Admin",
+      "owner": "Admin",
       "usercode": "",
       "passcode": "",
       "dealer_id": "admin_josh",
@@ -49,18 +50,20 @@
     },
     {
       "dealer_name": "Josh's AutoWorld",
+      "owner": "Josh Dicker",
       "usercode": "josh",
       "passcode": "pw",
       "dealer_id": "multi_brand_dealer_001",
       "email": "thejscott5@gmail.com",
       "brands": [
-        "bmw",
-        "mercedes"
+        "dodge",
+        "ford"
       ],
       "id": "fe61"
     },
     {
       "dealer_name": "Montana Cadillac",
+      "owner": "Montana Hodgen",
       "usercode": "monty",
       "passcode": "pw",
       "dealer_id": "cadillac_dealer_001",
@@ -72,6 +75,7 @@
     },
     {
       "dealer_name": "Scott Truck Depot",
+      "owner": "Scott Nicastro",
       "usercode": "scott",
       "passcode": "pw",
       "dealer_id": "multi_brand_dealer_002",
@@ -85,6 +89,7 @@
     },
     {
       "dealer_name": "Audi of Dorrance",
+      "owner": "Dorrie Goodman",
       "usercode": "dorrie",
       "passcode": "pw",
       "dealer_id": "audi_dealer_001",
@@ -535,6 +540,18 @@
       "type": "lease",
       "template_filled": "Buy the undefined mercedess undefined with undefined% APR for undefined months. MSRP: undefined. Expires 2025-05-09.",
       "created_at": "2025-04-24T16:40:29.651Z"
+    },
+    {
+      "id": "45b1",
+      "YEAR": "2025",
+      "MODEL": "Escalade Turbo",
+      "MONTHLY_PAYMENT": "$299",
+      "LEASE_TERM": "26",
+      "EXPIRATION_DATE": "2025-05-02",
+      "make": "cadillac",
+      "type": "lease",
+      "template_filled": "Buy the 2025 cadillac Escalade Turbo with undefined% APR for undefined months. MSRP: undefined. Expires 2025-05-02.",
+      "created_at": "2025-04-26T13:45:29.019Z"
     }
   ]
 }

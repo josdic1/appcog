@@ -1,6 +1,6 @@
 import viteLogo from '/vite.svg'
 import { useContext } from 'react'
-
+import AuthButton from "./AuthButton"
 import DealerContext from '../contexts/DealerContext'
 import NavBar from './NavBar'
 import { Outlet } from "react-router-dom"
@@ -8,12 +8,15 @@ import { Outlet } from "react-router-dom"
 function AppContent() {
 
     const { currentUser } = useContext(DealerContext)
-    if (!currentUser) return null 
+  
+ const showNav = currentUser
+
    
     return (
       <>
         <header>
-          <NavBar />
+          {showNav ? 
+          <NavBar /> : ""}
         </header>
         <main>
           <div>
@@ -26,6 +29,7 @@ function AppContent() {
               }}
             />
           </div>
+          <AuthButton />
           <Outlet />
         </main>
       </>
