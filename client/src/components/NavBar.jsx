@@ -1,27 +1,38 @@
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { useContext } from "react"
 import DealerContext from "../contexts/DealerContext"
 
 function NavBar() {
-  const dealerCtx = useContext(DealerContext)
+  const dealerCtx = useContext(DealerContext);
 
-  if (!dealerCtx) {
-    console.warn("❌ DealerContext is undefined in NavBar")
-    return null
+  if (!dealerCtx || typeof dealerCtx !== 'object') {
+    console.warn("❌ DealerContext is undefined or not an object in NavBar");
+    return null;
   }
 
-  const { currentUser, onLogout } = dealerCtx
-  const navigate = useNavigate()
+  const { currentUser, onLogout } = dealerCtx;
 
-  if (!currentUser) return null
 
+
+  if (!currentUser) return null;
+
+
+
+  
   return (
     <nav style={navStyles}>
       <div style={linkGroupStyles}>
+      <NavLink to="/home" style={linkStyles}>Home</NavLink>
         <NavLink to="/home" style={linkStyles}>Dashboard</NavLink>
         <NavLink to="/offerlist" style={linkStyles}>Offers</NavLink>
-        <NavLink to="/dealerlist" style={linkStyles}>Dealers</NavLink>
+        {currentUser?.user_type !== "dealer" && (
+  <NavLink to="/dealerlist" style={linkStyles}>Dealers</NavLink>
+)}
+  <NavLink to="/home" style={linkStyles}>New Offer</NavLink>
+
+
       </div>
+
       <button onClick={onLogout} style={logoutButtonStyles}>Logout</button>
     </nav>
   )

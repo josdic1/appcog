@@ -17,6 +17,8 @@ function TypeButtons() {
   
   return (
 <div>
+  <section>  <em>Select an offer template</em></section>
+
   <button type="button" name="buy" onClick={handleClick}>Buy</button>
   <button type="button" name="lease" onClick={handleClick}>Lease</button>
 </div>

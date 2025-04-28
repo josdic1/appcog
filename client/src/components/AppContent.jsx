@@ -1,6 +1,6 @@
-import viteLogo from '/vite.svg'
-import { useContext } from 'react'
 
+import { useContext } from 'react'
+import AuthButton from "./AuthButton"
 import DealerContext from '../contexts/DealerContext'
 import NavBar from './NavBar'
 import { Outlet } from "react-router-dom"
@@ -19,19 +19,18 @@ function AppContent() {
           <NavBar /> : ""}
         </header>
         <main>
-          <div>
-            <img
-              src={viteLogo}
-              className="logo"
-              alt="Vite logo"
-              style={{
-                filter: currentUser?.dealer_name ? 'none' : 'grayscale(1)'
-              }}
-            />
-          </div>
+  <div style={{ fontSize: "2.5rem" }}>
+    <span style={{
+      color: currentUser?.dealer_name ? '#38b000' : 'gray',
+      filter: currentUser?.dealer_name ? 'none' : 'grayscale(1)'
+    }}>
+      C ⚙ G
+    </span>
+  </div>
 
-          <Outlet />
-        </main>
+{!currentUser && <AuthButton />}
+  <Outlet />
+</main>
       </>
     )
   }

@@ -35,7 +35,9 @@
       "owner": "Admin",
       "usercode": "",
       "passcode": "",
-      "dealer_id": "admin_josh",
+      "dealer_id": "0000",
+      "user_type": "admin",
+      "dealer_type": "multi",
       "email": "thejscott5@gmail.com",
       "brands": [
         "audi",
@@ -53,7 +55,9 @@
       "owner": "Josh Dicker",
       "usercode": "josh",
       "passcode": "pw",
-      "dealer_id": "multi_brand_dealer_001",
+      "dealer_id": "0001",
+      "user_type": "dealer",
+      "dealer_type": "multi",
       "email": "thejscott5@gmail.com",
       "brands": [
         "gmc",
@@ -66,7 +70,9 @@
       "owner": "Montana Hodgen",
       "usercode": "monty",
       "passcode": "pw",
-      "dealer_id": "cadillac_dealer_001",
+      "dealer_id": "0002",
+      "user_type": "dealer",
+      "dealer_type": "solo",
       "email": "montanaloran@gmail.com",
       "brands": [
         "cadillac"
@@ -78,7 +84,9 @@
       "owner": "Scott Nicastro",
       "usercode": "scott",
       "passcode": "pw",
-      "dealer_id": "multi_brand_dealer_002",
+      "dealer_id": "0003",
+      "user_type": "dealer",
+      "dealer_type": "multi",
       "email": "joshuadicker@gmail.com",
       "brands": [
         "dodge",
@@ -93,7 +101,9 @@
       "owner": "Dorrie Goodman",
       "usercode": "dorrie",
       "passcode": "pw",
-      "dealer_id": "audi_dealer_001",
+      "dealer_id": "0004",
+      "user_type": "dealer",
+      "dealer_type": "solo",
       "email": "dorriegoodman@gmail.com",
       "brands": [
         "audi"
@@ -502,69 +512,43 @@
   ],
   "offers": [
     {
-      "id": "67d0",
+      "id": "61d8",
       "YEAR": "2025",
-      "MODEL": "G-Wagon",
-      "APR_RATE": "1",
-      "APR_TERM": "1",
-      "MSRP": "1",
-      "EXPIRATION_DATE": "11-11-2027",
-      "make": "audi",
+      "MODEL": "Sierra 1500 light-duty pickup truck",
+      "APR_RATE": "7",
+      "APR_TERM": "48",
+      "EXPIRATION_DATE": "2028-01-28",
+      "make": "gmc",
       "type": "buy",
-      "template_filled": "Buy the 2025 audi G-Wagon with 1% APR for 1 months. MSRP: 1. Expires 11-11-2027.",
-      "created_at": "2025-04-24T14:05:11.178Z"
+      "template_filled": "Finance your 2025 GMC Sierra 1500 light-duty pickup truck at 7% for 48 months. Expires 2028-01-28.",
+      "created_at": "4/28/2025, 12:10:55 PM",
+      "created_by": "0001"
     },
     {
-      "id": "ce5c",
-      "EXPIRATION_DATE": "2025-07-01",
-      "make": "mercedess",
-      "type": "lease",
-      "template_filled": "Buy the undefined mercedess undefined with undefined% APR for undefined months. MSRP: undefined. Expires 2025-07-01.",
-      "created_at": "2025-04-24T14:05:37.499Z"
-    },
-    {
-      "id": "ac7d",
-      "YEAR": "2021",
-      "MODEL": "Escalade",
-      "APR_RATE": "2%",
-      "APR_TERM": "2",
-      "MSRP": "2",
-      "make": "cadillac",
-      "type": "buy",
-      "template_filled": "Buy the 2021 cadillac Escalade with 2%% APR for 2 months. MSRP: 2. Expires undefined.",
-      "created_at": "2025-04-24T15:36:11.631Z"
-    },
-    {
-      "id": "284e",
-      "EXPIRATION_DATE": "2025-05-09",
-      "make": "mercedess",
-      "type": "lease",
-      "template_filled": "Buy the undefined mercedess undefined with undefined% APR for undefined months. MSRP: undefined. Expires 2025-05-09.",
-      "created_at": "2025-04-24T16:40:29.651Z"
-    },
-    {
-      "id": "45b1",
+      "id": "6c85",
+      "MODEL": "Q3 S Line 45 TFSI Quattro Premium",
       "YEAR": "2025",
-      "MODEL": "Escalade Turbo",
-      "MONTHLY_PAYMENT": "$299",
-      "LEASE_TERM": "26",
-      "EXPIRATION_DATE": "2025-05-02",
-      "make": "cadillac",
-      "type": "lease",
-      "template_filled": "Buy the 2025 cadillac Escalade Turbo with undefined% APR for undefined months. MSRP: undefined. Expires 2025-05-02.",
-      "created_at": "2025-04-26T13:45:29.019Z"
-    },
-    {
-      "id": "d800",
-      "YEAR": "2025",
-      "MODEL": "G-Wagon",
-      "MONTHLY_PAYMENT": "$299",
-      "LEASE_TERM": "26",
-      "EXPIRATION_DATE": "2025-04-22",
+      "MONTHLY_PAYMENT": "199",
+      "LEASE_TERM": "36",
+      "EXPIRATION_DATE": "2027-03-04",
       "make": "audi",
       "type": "lease",
-      "template_filled": "Lease the 2025 Audi G-Wagon for $299/mo for 26 months. Expires 2025-04-22.",
-      "created_at": "2025-04-26T19:23:13.327Z"
+      "template_filled": "Lease the 2025 Audi Q3 S Line 45 TFSI Quattro Premium for 199/mo for 36 months. Expires 2027-03-04.",
+      "created_at": "4/28/2025, 12:12:03 PM",
+      "created_by": "0004"
+    },
+    {
+      "id": "4df2",
+      "YEAR": "2024",
+      "MODEL": "Escalade IQ",
+      "APR_RATE": "6",
+      "APR_TERM": "34",
+      "MSRP": "50000",
+      "make": "cadillac",
+      "type": "buy",
+      "template_filled": "Finance the 2024 Cadillac Escalade IQ at 6% for 34 months. MSRP: 50000.",
+      "created_at": "4/28/2025, 12:12:57 PM",
+      "created_by": "0002"
     }
   ]
 }

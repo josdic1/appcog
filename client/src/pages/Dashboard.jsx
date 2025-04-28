@@ -18,7 +18,9 @@ function Dashboard() {
 return (
 <>
 <header>
-<h2>{`Logged in as ${currentUser?.dealer_name}` || "Not logged in"}</h2>
+  <h2>{`Welcome, ${currentUser?.dealer_name}!` || "Not logged in"}</h2>
+  <p>{`User ID# ${currentUser?.dealer_id}` || ""}</p>
+  <em>{currentUser?.dealer_id ? 'Select a brand below to create a new offer' : 'Please log in to continue'}</em>
 </header>
 <main>
 <Form />

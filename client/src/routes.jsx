@@ -13,7 +13,7 @@ import OfferList from "./pages/OfferList"
 const routes = [
     { path: '/', element: <App />, errorElement: <Error />,
         children: [
-            { index: true, element: <Login /> },
+            { index: true, element: <Dashboard /> },
             { path: 'dealer/:id', element: <Dealer /> },
             { path: 'dealerform', element: <DealerForm /> },
             { path: 'dealerlist', element: <DealerList /> },

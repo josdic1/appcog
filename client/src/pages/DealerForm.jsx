@@ -71,7 +71,7 @@ function handleCheck(obj) {
       [name]: value,
     }))
   }
-
+console.log(selectedDealer)
   const clearForm = () => {
     setFormData({
       dealer_name: "",
@@ -92,6 +92,7 @@ function handleCheck(obj) {
     const payload = {
       ...formData,
       brands: brandsList,
+      // created_by: 
     }
 
     if (inEditMode) {

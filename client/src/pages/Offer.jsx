@@ -1,10 +1,12 @@
 import { useState, useEffect, useContext } from "react"
 import { useParams } from "react-router-dom"
 import CrudContext from "../contexts/CrudContext"
+import DealerContext from "../contexts/DealerContext"
 
 function Offer() {
 
     const { offers } = useContext(CrudContext)
+
 
     const [ clickedOffer, setClickedOffer] = useState({})
     
@@ -22,6 +24,7 @@ return (
     <p>{clickedOffer.type}</p>
     <p>{clickedOffer.created_at}</p>
     <p>{clickedOffer.template_filled || 'EMPTY =('}</p>
+
     </>
     )}
 

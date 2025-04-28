@@ -27,7 +27,7 @@ function DealerCard({ dealer }) {
 
   return (
     <tr id={dealer.id}>
-      <td><button type='button' id={dealer.id} name='view' onClick={onClick}>View {dealer.id}</button></td>
+      <td><button type='button' id={dealer.id} name='view' onClick={onClick}>View Offers for ID# {dealer.dealer_id}</button></td>
       <td>{dealer.dealer_name}</td>
       <td>{dealer.owner}</td>
       <th>{dealer.brands.join(" ")}</th>
