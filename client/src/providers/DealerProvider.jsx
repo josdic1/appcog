@@ -72,7 +72,7 @@ function DealerProvider({children}) {
 
     async function fetchDealers() {
         try{
-            const r = await fetch(`http://localhost:3000/dealers`)
+            const r = await fetch(`http://5.161.61.8:3001/dealers`)
             if(!r.ok){
                 throw new Error("💥 Error");
             }
@@ -84,7 +84,7 @@ function DealerProvider({children}) {
 
     async function handleAdd(newDealer) {
       try {
-        const r = await fetch(`http://localhost:3000/dealers`, {
+        const r = await fetch(`http://5.161.61.8:3001/dealers`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -101,7 +101,7 @@ function DealerProvider({children}) {
     
     async function handleUpdate(updatedDealer) {
       try {
-        const r = await fetch(`http://localhost:3000/dealers/${updatedDealer.id}`, {
+        const r = await fetch(`http://5.161.61.8:3001/dealers/${updatedDealer.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -118,7 +118,7 @@ function DealerProvider({children}) {
 
     async function handleDelete(dealerId) {
       try {
-        const r = await fetch(`http://localhost:3000/dealers/${dealerId}`, {
+        const r = await fetch(`http://5.161.61.8:3001/dealers/${dealerId}`, {
           method: "DELETE",
         })
         if (!r.ok) throw new Error("Failed to delete dealer")

@@ -37,7 +37,7 @@ function BrandProvider({children}) {
 
     async function fetchBrands() {
         try{
-            const r = await fetch(`http://localhost:3000/brands`)
+            const r = await fetch(`http://5.161.61.8:3001/brands`)
             if(!r.ok){
                 throw new Error("💥 Error");
             }

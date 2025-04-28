@@ -25,7 +25,7 @@ useEffect(() => {
 
   async function fetchBrandTemplate() {
     try {
-      const r = await fetch(`http://localhost:3000/templates`)
+      const r = await fetch(`http://5.161.61.8:3001/templates`)
       if (!r.ok) throw new Error("💥 Error")
       const data = await r.json()
       const filtered = data.find(t => t.brand === selectedBrand)
@@ -39,7 +39,7 @@ useEffect(() => {
 
     async function fetchTemplateVariables() {
         try{
-            const r = await fetch(`http://localhost:3000/variables`)
+            const r = await fetch(`http://5.161.61.8:3001/variables`)
             if(!r.ok){
                 throw new Error("💥 Error");
             }

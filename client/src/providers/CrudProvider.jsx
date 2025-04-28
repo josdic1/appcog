@@ -12,7 +12,7 @@ function CrudProvider({children}) {
 
 async function fetchOffers() {
     try{
-        const r = await fetch(`http://localhost:3000/offers`)
+        const r = await fetch(`http://5.161.61.8:3001/offers`)
         if(!r.ok){
             throw new Error("💥 Error");
           }
@@ -27,7 +27,7 @@ async function fetchOffers() {
             return
           }
         try {
-          const r = await fetch(`http://localhost:3000/offers`, {
+          const r = await fetch(`http://5.161.61.8:3001/offers`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ async function fetchOffers() {
             return
           }
         try {
-          const r = await fetch(`http://localhost:3000/offers/${obj.id}`, {
+          const r = await fetch(`http://5.161.61.8:3001/offers/${obj.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ async function fetchOffers() {
     async function handleDelete(offerId) {
         const filtered = offers.filter(o => o.id !== offerId)
         try {
-            const r = await fetch(`http://localhost:3000/offers/${offerId}`,{
+            const r = await fetch(`http://5.161.61.8:3001/offers/${offerId}`,{
                 method: 'DELETE'
             })
             if(!r.ok) {
